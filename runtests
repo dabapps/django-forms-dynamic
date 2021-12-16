@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+black --check dynamic_forms tests
+flake8 dynamic_forms tests
+isort --check --diff dynamic_forms tests
+python manage.py test --noinput $@

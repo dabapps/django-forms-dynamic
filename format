@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+black dynamic_forms tests
+flake8 dynamic_forms tests
+isort dynamic_forms tests
