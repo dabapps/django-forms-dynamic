@@ -28,7 +28,9 @@ class SelectUserFromMyTeamForm(forms.Form):
         team = kwargs.pop("team")
         super().__init__(*args, **kwargs)
         self.fields["user"].queryset = User.objects.filter(team=team)
+```
 
+```python
 def select_user_view(request):
     form = SelectUserFromMyTeamForm(team=request.user.team)
     return render("form.html", {"form": form})
@@ -57,7 +59,9 @@ class SelectUserFromMyTeamForm(DynamicFormMixin, forms.Form):
         forms.ModelChoiceField,
         queryset=lambda form: User.objects.filter(team=form.context["team"]),
     )
+```
 
+```python
 def select_user_view(request):
     form = SelectUserFromMyTeamForm(context={"team": request.user.team})
     return render("form.html", {"form": form})
@@ -181,13 +185,15 @@ The form is exactly the same as the HTMX example above. But this time, we only n
 def unpoly_form(request):
     form = MakeAndModelForm(request.POST or None)
     return render(request, "unpoly.html", {"form": form})
+```
 
+```python
 urlpatterns = [
     path("unpoly-form/", unpoly_form),
 ]
 ```
 
-And the template is super simple:
+And the template is even more simple:
 
 ```django
 {% load widget_tweaks %}
