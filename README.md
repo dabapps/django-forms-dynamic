@@ -152,7 +152,7 @@ And finally, we need a template. We're using [django-widget-tweaks](https://gith
 
 ```django
 {% load widget_tweaks %}
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
@@ -199,7 +199,7 @@ And the template is even more simple:
 
 ```django
 {% load widget_tweaks %}
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
