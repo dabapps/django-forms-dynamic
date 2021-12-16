@@ -54,6 +54,7 @@ Here's how the code looks now:
 ```python
 from dynamic_forms import DynamicField, DynamicFormMixin
 
+
 class SelectUserFromMyTeamForm(DynamicFormMixin, forms.Form):
     user = DynamicField(
         forms.ModelChoiceField,
@@ -129,6 +130,7 @@ Here are the two views:
 def htmx_form(request):
     form = MakeAndModelForm()
     return render(request, "htmx.html", {"form": form})
+
 
 def htmx_models(request):
     form = MakeAndModelForm(request.GET)
@@ -253,7 +255,7 @@ class CancellationReasonForm(DynamicFormMixin, forms.Form):
         forms.CharField,
         include=lambda form: form["cancellation_reason"].value() == "other",
         widget=lambda _: forms.TextArea,
-    ) 
+    )
 ```
 
 ## Why the awkward name?
