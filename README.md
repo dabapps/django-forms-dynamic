@@ -177,7 +177,7 @@ And finally, we need a template. We're using [django-widget-tweaks](https://gith
 
 ### [Unpoly](https://unpoly.com/)
 
-Let's build exactly the same thing with Unpoly. Unpoly favours a slightly different philosophy: rather than having the backend returning HTML fragments, it tends to prefer the server to return full HTML pages with every XHR request, and the "plucks out" the relevant element(s) and inserts them into the DOM, replacing the old ones.
+Let's build exactly the same thing with Unpoly. Unpoly favours a slightly different philosophy: rather than having the backend returning HTML fragments, it tends to prefer the server to return full HTML pages with every XHR request, and "plucks out" the relevant element(s) and inserts them into the DOM, replacing the old ones.
 
 When it comes to forms, Unpoly uses a special attribute `[up-validate]` to mark fields which, when changed, should trigger the form to be submitted and re-validated. [The docs for `[up-validate]`](https://unpoly.com/input-up-validate) also describe it as "a great way to partially update a form when one field depends on the value of another field", so this is what we'll use to implement our cascading selects.
 
