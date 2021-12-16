@@ -28,7 +28,9 @@ class SelectUserFromMyTeamForm(forms.Form):
         team = kwargs.pop("team")
         super().__init__(*args, **kwargs)
         self.fields["user"].queryset = User.objects.filter(team=team)
+```
 
+```python
 def select_user_view(request):
     form = SelectUserFromMyTeamForm(team=request.user.team)
     return render("form.html", {"form": form})
@@ -52,12 +54,15 @@ Here's how the code looks now:
 ```python
 from dynamic_forms import DynamicField, DynamicFormMixin
 
+
 class SelectUserFromMyTeamForm(DynamicFormMixin, forms.Form):
     user = DynamicField(
         forms.ModelChoiceField,
         queryset=lambda form: User.objects.filter(team=form.context["team"]),
     )
+```
 
+```python
 def select_user_view(request):
     form = SelectUserFromMyTeamForm(context={"team": request.user.team})
     return render("form.html", {"form": form})
@@ -126,6 +131,7 @@ def htmx_form(request):
     form = MakeAndModelForm()
     return render(request, "htmx.html", {"form": form})
 
+
 def htmx_models(request):
     form = MakeAndModelForm(request.GET)
     return HttpResponse(form["model"])
@@ -181,13 +187,15 @@ The form is exactly the same as the HTMX example above. But this time, we only n
 def unpoly_form(request):
     form = MakeAndModelForm(request.POST or None)
     return render(request, "unpoly.html", {"form": form})
+```
 
+```python
 urlpatterns = [
     path("unpoly-form/", unpoly_form),
 ]
 ```
 
-And the template is super simple:
+And the template is even more simple:
 
 ```django
 {% load widget_tweaks %}
@@ -247,7 +255,7 @@ class CancellationReasonForm(DynamicFormMixin, forms.Form):
         forms.CharField,
         include=lambda form: form["cancellation_reason"].value() == "other",
         widget=lambda _: forms.TextArea,
-    ) 
+    )
 ```
 
 ## Why the awkward name?
