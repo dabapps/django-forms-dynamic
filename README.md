@@ -47,7 +47,7 @@ The first argument to the `DynamicField` constructor is the field _class_ that y
 
 But there's one very important difference: **any argument that would normally be passed to the field constructor can optionally be a _callable_**. If it is a callable, it will be called _when the form is being instantiated_ and it will be passed the form _instance_ as an argument. The value returned by this callable will then be passed into to the field's constructor as usual.
 
-Before we see a code example, there's one further things to note: instead of passing arbitrary arguments (like `team` in the example above) into the form's constructor in the view, we borrow a useful idiom from Django REST framework serializers and instead pass a _single_ argument called `context`, which is a dictionary that can contain any values you need from the view. This is attached to the form as `form.context`.
+Before we see a code example, there's one further thing to note: instead of passing arbitrary arguments (like `team` in the example above) into the form's constructor in the view, we borrow a useful idiom from Django REST framework serializers and instead pass a _single_ argument called `context`, which is a dictionary that can contain any values you need from the view. This is attached to the form as `form.context`.
 
 Here's how the code looks now:
 
