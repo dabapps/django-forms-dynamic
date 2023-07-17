@@ -3,7 +3,7 @@ django-forms-dynamic
 
 **Resolve form field arguments dynamically when a form is instantiated, not when it's declared.**
 
-Tested against Django 2.2, 3.2 and 4.0 on Python 3.6, 3.7, 3.8, 3.9 and 3.10
+Tested against Django 3.2, 4.0, 4.1 and 4.2 on Python 3.8, 3.9, 3.10 and 3.11.
 
 ![Build Status](https://github.com/dabapps/django-forms-dynamic/workflows/CI/badge.svg)
 [![pypi release](https://img.shields.io/pypi/v/django-forms-dynamic.svg)](https://pypi.python.org/pypi/django-forms-dynamic)
