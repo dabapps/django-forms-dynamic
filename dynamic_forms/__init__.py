@@ -35,4 +35,4 @@ class DynamicFormMixin:
                 if field.should_be_included(self):
                     self.fields[name] = field.make_real_field(self)
                 else:
-                    del self.fields[name]
+                    self.fields[name].widget = forms.HiddenInput()
