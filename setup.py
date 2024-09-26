@@ -13,7 +13,7 @@ description = "Resolve form field arguments dynamically when a form is instantia
 url = "https://github.com/dabapps/django-forms-dynamic"
 author = "DabApps"
 author_email = "hello@dabapps.com"
-license = "BSD"
+license = "BSD-2-Clause"
 
 with open("README.md") as f:
     readme = f.read()
