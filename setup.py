@@ -61,7 +61,7 @@ setup(
     name=name,
     version=get_version(package),
     url=url,
-    license=license,
+    license_expression=license,
     description=description,
     long_description=readme,
     long_description_content_type="text/markdown",
