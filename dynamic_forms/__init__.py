@@ -1,7 +1,5 @@
 from django import forms
 
-__version__ = "1.0.0"
-
 
 def call_if_callable(value, *args, **kwargs):
     return value(*args, **kwargs) if callable(value) else value

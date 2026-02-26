@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-forms-dynamic"
+version = "1.0.0"
+description = "Resolve form field arguments dynamically when a form is instantiated, not when it's declared."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "DabApps", email = "hello@dabapps.com" }]
+
+[project.urls]
+Homepage = "https://github.com/dabapps/django-forms-dynamic"
+Changelog = "https://github.com/dabapps/django-forms-dynamic/releases"
+Issues = "https://github.com/dabapps/django-forms-dynamic/issues"
+
+[tool.setuptools.packages.find]
+include = ["dynamic_forms*"]
